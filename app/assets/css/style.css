@@ -1,0 +1,12 @@
+.fade.in {
+     opacity: 1;
+ }
+
+.modal-backdrop.in {
+    opacity: 0.5;
+}
+
+.modal.in .modal-dialog {
+    top: 50%;
+    transform: translateY(-100%) !important;
+}
