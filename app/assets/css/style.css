@@ -45,10 +45,13 @@ html,body {
 
 .login-page {
     text-align:center;
+    background: url('../images/background-space.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+
 }
 
 .login-page h4 {
-    margin-top: 2%;
     color: white;
     font-size: 3em;
 }

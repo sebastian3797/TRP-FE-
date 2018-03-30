@@ -17,6 +17,9 @@
 
         var _self = this;
 
+        $state.go('loginCandidate');
+
+
     }
 
 })();

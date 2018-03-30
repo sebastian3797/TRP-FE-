@@ -20,14 +20,16 @@
                 parent: 'main',
                 url: 'login',
                 templateUrl: '/app/components/login/templates/candidate-login.html',
-                controller: 'trpApp.login.CandidateLoginController',
-                controllerAs: 'cand'
+                controller: 'trpApp.login.CandidateLoginController as candCtrl'
             })
             .state('introCandidate', {
                 parent: 'main',
-                url: 'login',
+                url: 'intro',
                 templateUrl: '/app/components/login/templates/candidate-intro.html',
-                controller: 'trpApp.login.CandidateIntroController as introCtrl'
+                controller: 'trpApp.login.CandidateIntroController as introCtrl',
+                params: {
+                    testData: null
+                }
             });
 
         $locationProvider.html5Mode(true);

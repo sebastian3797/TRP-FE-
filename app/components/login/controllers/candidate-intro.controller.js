@@ -7,16 +7,17 @@
         .controller('trpApp.login.CandidateIntroController', Controller);
 
     Controller.$inject = [
-        '$scope'
+        '$scope',
+        '$stateParams'
     ];
 
     function Controller(
-        $scope) {
+        $scope,
+        $stateParams) {
 
         var _self = this;
 
-        _self.data = {};
-        _self.data.userName = 'Sebastian';
+        _self.testData = $stateParams.testData;
 
     }
 

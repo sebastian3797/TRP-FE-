@@ -19,7 +19,7 @@
                 .loginCandidate(_self.candidateCode)
                 .then(function (response) {
                     if (response.interviewStatus === 'NOT_STARTED')
-                        $state.go('intro', _self.candidateCode);
+                        $state.go('introCandidate', { testData: response});
                     else $state.reload();
                 })
                 .catch(function (error) {
