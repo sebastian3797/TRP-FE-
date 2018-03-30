@@ -1,3 +1,9 @@
+body{
+    background: url('../images/background-space.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
 .fade.in {
      opacity: 1;
  }
@@ -9,4 +15,41 @@
 .modal.in .modal-dialog {
     top: 50%;
     transform: translateY(-100%) !important;
+}
+
+.login-rocket {
+    background: url('../images/rockets.png') no-repeat 0 0;
+    width: 50em;
+    height:10em;
+    display: block;
+    transform: rotate(-40deg);
+    position: fixed;
+    margin-top: -10%;
+}
+
+.login-page {
+    text-align:center;
+}
+
+.login-page h4 {
+    margin-top: 2%;
+    color: white;
+    font-size: 3em;
+}
+
+.login-page .login-form {
+    margin: 5% auto;
+    width: 100%;
+    display: block;
+}
+
+.login-form input {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.input-code {
+    margin-top: 20%!important;
+    width: 20%;
 }
