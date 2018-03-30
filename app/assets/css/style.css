@@ -18,7 +18,9 @@ html,body {
 }
 
 .trp-container .parent-card {
-    background-color: #e5e8ec;
+    background: url('../images/background-space.png') no-repeat center center fixed;
+    background-size: cover;
+
 }
 
 .trp-container .welcome-card {
