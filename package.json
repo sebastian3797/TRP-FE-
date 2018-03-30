@@ -43,5 +43,8 @@
     "watch": "grunt watch",
     "tests": "grunt test",
     "start": "http-server -a localhost -p 8001 -c-1 -o"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15"
   }
 }

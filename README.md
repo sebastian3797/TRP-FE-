@@ -1,1 +1,0 @@
-### HACKA PRAACTICE

@@ -175,16 +175,5 @@
             'copy:nodeModulesJsToLibs',
             'copy:nodeModulesCssTo'
         ]);
-
-        grunt.registerTask('package', [
-            'clean:temp',
-            'jshint',
-            'karma:unit',
-            'html2js:dist',
-            'concat:js',
-            'uglify:dist',
-            'clean:temp',
-            'compress:dist'
-        ]);
     };
 })();
