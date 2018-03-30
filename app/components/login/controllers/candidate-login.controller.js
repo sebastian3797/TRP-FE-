@@ -15,7 +15,6 @@
 
         var _self = this;
 
-
     }
 
 })();
