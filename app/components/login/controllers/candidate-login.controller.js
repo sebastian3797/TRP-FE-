@@ -18,7 +18,9 @@
             candidateLoginService
                 .loginCandidate(_self.candidateCode)
                 .then(function (response) {
-                    $state.go('intro', _self.candidateCode);
+                    if (response.interviewStatus === 'NOT_STARTED')
+                        $state.go('intro', _self.candidateCode);
+                    else $state.reload();
                 })
                 .catch(function (error) {
                     $state.reload();
