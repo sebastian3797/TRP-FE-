@@ -20,7 +20,8 @@
                 parent: 'main',
                 url: 'login',
                 templateUrl: '/app/components/login/templates/candidate-login.html',
-                controller: 'trpApp.login.CandidateLoginController'
+                controller: 'trpApp.login.CandidateLoginController',
+                controllerAs: 'cand'
             })
             .state('introCandidate', {
                 parent: 'main',

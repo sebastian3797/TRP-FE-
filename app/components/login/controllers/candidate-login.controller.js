@@ -7,18 +7,22 @@
         .controller('trpApp.login.CandidateLoginController', Controller);
 
     Controller.$inject = [
-        '$scope',
-        '$state'
+        '$scope', '$state', 'trpApp.login.CandidateLoginService'
     ];
 
-    function Controller(
-        $scope,
-        $state) {
+    function Controller($scope, $state, candidateLoginService) {
 
         var _self = this;
 
-        $scope.login = function() {
-            $state.go('introCandidate');
+        _self.loginCandidate = function () {
+            candidateLoginService
+                .loginCandidate(_self.candidateCode)
+                .then(function (response) {
+                    $state.go('intro', _self.candidateCode);
+                })
+                .catch(function (error) {
+                    $state.reload();
+                });
         }
 
     }

@@ -32,3 +32,40 @@ html,body {
 .trp-container .welcome-card .row:nth-child(1), .trp-container .welcome-card .row:nth-child(2) {
     color: #565656
 }
+
+.login-rocket {
+    background: url('../images/rockets.png') no-repeat 0 0;
+    width: 50em;
+    height:10em;
+    display: block;
+    transform: rotate(-40deg);
+    position: fixed;
+    margin-top: -10%;
+}
+
+.login-page {
+    text-align:center;
+}
+
+.login-page h4 {
+    margin-top: 2%;
+    color: white;
+    font-size: 3em;
+}
+
+.login-page .login-form {
+    margin: 5% auto;
+    width: 100%;
+    display: block;
+}
+
+.login-form input {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.input-code {
+    margin-top: 20%!important;
+    width: 20%;
+}

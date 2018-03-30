@@ -1,2 +1,9 @@
-<h4>Mindit Recruitment Platform</h4>
-<button class="d-block mx-auto" ng-click="login()">LOG IN</button>
+<div class="login-page">
+    <h4>Mindit Recruitment Platform</h4>
+    <div class="login-form">
+        <div class="login-rocket"></div>
+        <input type="text" class="form-control col-4 input-code" name="code" placeholder="Code" ng-model="cand.candidateCode"><br/><br/>
+        <input type="button" name="login" class="btn btn-primary" value="Login" ng-click="cand.loginCandidate()">
+    </div>
+</div>
+
