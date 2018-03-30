@@ -120,6 +120,11 @@
                         cwd: './node_modules/bootstrap/dist/css/',
                         src: 'bootstrap.min.css*',
                         dest: './app/assets/css/'
+                    }, {
+                        expand: true,
+                        cwd: './node_modules/angular-material',
+                        src: 'angular-material.min.css',
+                        dest: './app/assets/css/'
                     }]
                 },
                 nodeModulesJsToLibs: {
@@ -148,6 +153,26 @@
                         cwd: './node_modules/angular-ui-router-uib-modal/',
                         src: 'angular-ui-router-uib-modal.js',
                         dest: './app/assets/libs/'
+                    }, {
+                         expand: true,
+                         cwd: './node_modules/jquery/dist',
+                         src: 'jquery.min.js',
+                         dest: './app/assets/libs/'
+                    }, {
+                        expand: true,
+                        cwd: './node_modules/angular-aria',
+                        src: 'angular-aria.min.js',
+                        dest: './app/assets/libs/'
+                    }, {
+                       expand: true,
+                       cwd: './node_modules/angular-messages',
+                       src: 'angular-messages.min.js',
+                       dest: './app/assets/libs/'
+                    }, {
+                         expand: true,
+                         cwd: './node_modules/angular-material',
+                         src: 'angular-material.min.js',
+                         dest: './app/assets/libs/'
                     }]
                 }
             }

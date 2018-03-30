@@ -5,7 +5,10 @@
     angular.module('trpApp',[
         'ui.router',
         'ui.bootstrap',
-        'loginModule'
+        'loginModule',
+        'quizModule',
+        'ngMaterial',
+        'ngMessages'
     ]);
 
 })();
