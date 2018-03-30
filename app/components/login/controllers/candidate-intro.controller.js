@@ -8,17 +8,22 @@
 
     Controller.$inject = [
         '$scope',
-        '$stateParams'
+        '$stateParams',
+        '$state'
     ];
 
     function Controller(
         $scope,
-        $stateParams) {
+        $stateParams,
+        $state) {
 
         var _self = this;
 
         _self.testData = $stateParams.testData;
 
+        _self.nextPage = function () {
+            $state.go('statusCandidate', { testData: _self.testData});
+        }
     }
 
 })();

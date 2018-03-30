@@ -35,8 +35,20 @@ html,body {
     color: #565656
 }
 
+.trp-container .status-card {
+    background-color: white;
+    position: absolute;
+    padding: 30px 15px 0 15px;
+    top: 20%;
+    border-radius: 5px;
+}
+
+.trp-container .status-card .row:nth-child(1), .trp-container .status-card .row:nth-child(2) {
+    color: #565656
+}
+
 .login-rocket {
-    background: url('../images/rockets.png') no-repeat 0 0;
+    background: url('../images/rocket.png') no-repeat 0 0;
     width: 50em;
     height:10em;
     display: block;
@@ -65,8 +77,9 @@ html,body {
     width: 100%;
     display: block;
     position: absolute;
-    top: 40%;
+    top: 57%;
     transform: translateY(50%);
+    padding-left: 2.5em;
 }
 
 .login-form input {
@@ -77,9 +90,23 @@ html,body {
 }
 
 .input-code {
-    width: 25%;
+    width: 12%;
 }
 
 .viewRouter {
     overflow-x: hidden;
+}
+
+.score-result {
+    font-size: 1.75em;
+}
+
+.login-page img {
+    width: auto;
+    height: 80%;
+}
+
+.login-form .input-button {
+    width: 12%;
+    margin-top: 1em;
 }

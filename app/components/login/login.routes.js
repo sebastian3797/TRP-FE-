@@ -30,6 +30,15 @@
                 params: {
                     testData: null
                 }
+            })
+            .state('statusCandidate', {
+                parent: 'main',
+                url: 'status',
+                templateUrl: '/app/components/login/templates/candidate-status.html',
+                controller: 'trpApp.login.CandidateStatusController as statusCtrl',
+                params: {
+                    testData: null
+                }
             });
 
         $locationProvider.html5Mode(true);
