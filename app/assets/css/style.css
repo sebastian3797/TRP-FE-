@@ -1,12 +1,34 @@
-.fade.in {
-     opacity: 1;
- }
-
-.modal-backdrop.in {
-    opacity: 0.5;
+html,body {
+  height: 100%;
 }
 
-.modal.in .modal-dialog {
-    top: 50%;
-    transform: translateY(-100%) !important;
+.trp-container .start-button {
+    background-color: #b93925;
+    border-color: #b93925;
+}
+
+.trp-container .start-button:active {
+    background-color: #E04028;
+    border-color: #E04028;
+}
+
+.trp-container .start-button:hover {
+    background-color: #E04028;
+    border-color: #E04028;
+}
+
+.trp-container .parent-card {
+    background-color: #e5e8ec;
+}
+
+.trp-container .welcome-card {
+    background-color: white;
+    position: absolute;
+    padding: 90px 15px;
+    top: 20%;
+    border-radius: 5px;
+}
+
+.trp-container .welcome-card .row:nth-child(1), .trp-container .welcome-card .row:nth-child(2) {
+    color: #565656
 }

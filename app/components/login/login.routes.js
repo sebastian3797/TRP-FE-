@@ -21,6 +21,12 @@
                 url: 'login',
                 templateUrl: '/app/components/login/templates/candidate-login.html',
                 controller: 'trpApp.login.CandidateLoginController'
+            })
+            .state('introCandidate', {
+                parent: 'main',
+                url: 'login',
+                templateUrl: '/app/components/login/templates/candidate-intro.html',
+                controller: 'trpApp.login.CandidateIntroController as introCtrl'
             });
 
         $locationProvider.html5Mode(true);

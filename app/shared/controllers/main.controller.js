@@ -17,7 +17,7 @@
 
         var _self = this;
 
-        $state.go('loginCandidate');
+        $state.go('introCandidate');
 
 
     }
