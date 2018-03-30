@@ -16,9 +16,9 @@
         $locationProvider) {
 
         $stateProvider
-            .state('main.loginCandidate', {
+            .state('loginCandidate', {
                 parent: 'main',
-                url: '/login',
+                url: 'login',
                 templateUrl: '/app/components/login/templates/candidate-login.html',
                 controller: 'trpApp.login.CandidateLoginController'
             });
