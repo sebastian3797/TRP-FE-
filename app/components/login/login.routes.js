@@ -28,7 +28,8 @@
                 templateUrl: '/app/components/login/templates/candidate-intro.html',
                 controller: 'trpApp.login.CandidateIntroController as introCtrl',
                 params: {
-                    testData: null
+                    testData: null,
+                    user: null
                 }
             })
             .state('statusCandidate', {
@@ -37,7 +38,18 @@
                 templateUrl: '/app/components/login/templates/candidate-status.html',
                 controller: 'trpApp.login.CandidateStatusController as statusCtrl',
                 params: {
-                    testData: null
+                    testData: null,
+                    user: null
+                }
+            })
+            .state('quizCandidate', {
+                parent: 'main',
+                url: 'quiz',
+                templateUrl: '/app/components/login/templates/candidate-quiz.html',
+                controller: 'trpApp.login.CandidateQuizController as quizCtrl',
+                params: {
+                    testData: null,
+                    user: null
                 }
             });
 

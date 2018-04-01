@@ -1,0 +1,94 @@
+<div class="container-fluid h-100 quiz-page">
+    <div class="quiz-menu">
+        <div class="user-name">
+            {{ quizCtrl.user.userName}}
+        </div>
+        <div class="progress">
+            <div>
+                <img src="app/assets/images/rocket_small.png" class="rocket-image"/>
+            </div>
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="background-color: black;">
+            </div>
+        </div>
+        <div class="timer-submit">
+            <button type="button" class="btn btn-default btn-circle counter-button"> {{ quizCtrl.counter }}'</button>
+            <button type="button" class="btn btn-default" ng-disabled="!quizCtrl.answeredQuestions"
+            ng-click="quizCtrl.submitQuiz()"> Submit quiz </button>
+        </div>
+    </div>
+
+    <div class="quiz-table">
+
+        <div class="chooseAnswer">
+            <div> Choose Answer: </div>
+            <div ng-repeat="quiz in quizCtrl.allQuiz" ng-if="quiz.type == 'CHOOSE_ANSWER'" class="quiz-item">
+                <button type="button" class="btn btn-light" ng-click="quizCtrl.setQuiz(quiz.id)">
+                    {{ quiz.title}}
+                </button>
+                <button type="button" class="btn btn-default btn-circle"
+                        ng-click="quizCtrl.setQuiz(quiz.id)"
+                        ng-class="{'greenCircle' : quiz.candidateAnswerText != null && quiz.candidateAnswerText.toString().length > 0}"></button>
+            </div>
+        </div>
+
+        <div class="writeAnswer">
+            <div> Write Answer: </div>
+            <div ng-repeat="quiz in quizCtrl.allQuiz" ng-if="quiz.type == 'WRITE_ANSWER'" class="quiz-item">
+                <button type="button" class="btn btn-light" ng-click="quizCtrl.setQuiz(quiz.id)">
+                    {{ quiz.title}}
+                </button>
+                <button type="button" class="btn btn-default btn-circle"
+                        ng-click="quizCtrl.setQuiz(quiz.id)"
+                        ng-class="{'greenCircle' : quiz.candidateAnswerText != null && quiz.candidateAnswerText.toString().length > 0}"></button>
+            </div>
+        </div>
+
+
+        <div class="writeCode">
+            <div> Write Code </div>
+            <div ng-repeat="quiz in quizCtrl.allQuiz" ng-if="quiz.type == 'WRITE_CODE'"  class="quiz-item">
+                <button type="button" class="btn btn-light" ng-click="quizCtrl.setQuiz(quiz.id)">
+                    {{ quiz.title}}
+                </button>
+                <button type="button" class="btn btn-default btn-circle"
+                        ng-click="quizCtrl.setQuiz(quiz.id)"
+                        ng-class="{'greenCircle' : quiz.candidateAnswerText && quiz.candidateAnswerText.toString().length > 0}"></button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="question-container">
+        <h3> Quiz </h3>
+        <br/>
+        <div class="quiz-info"> Please answer to the following question: </div>
+        <br />
+
+        <div class="answer-container">
+            <div>
+                {{ quizCtrl.selectedQuiz.title }}
+
+
+                <div ng-if="quizCtrl.selectedQuiz.type !== 'CHOOSE_ANSWER'">
+                    <label for="answer">Your answer :</label>
+                    <textarea class="form-control" rows="5" id="answer"
+                    ng-model="quizCtrl.selectedQuiz.candidateAnswerText"
+                    ng-change="quizCtrl.newAnswer()"></textarea>
+                </div>
+            </div>
+
+            <div ng-if="quizCtrl.selectedQuiz.type === 'CHOOSE_ANSWER'">
+                <div ng-repeat="ans in quizCtrl.selectedQuiz.answers">
+                        <input type="radio" name="quizCtrl.selectedQuiz.id"
+                               ng-model="quizCtrl.selectedQuiz.candidateAnswerText"
+                               ng-value="ans.id"
+                               ng-change="quizCtrl.newAnswer()">
+                    {{ ans.label}}
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

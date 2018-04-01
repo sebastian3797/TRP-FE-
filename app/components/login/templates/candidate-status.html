@@ -1,18 +1,18 @@
 <div class="row h-100 position-relative justify-content-md-center parent-card">
     <div class="col-md-8 status-card">
         <div class="row justify-content-md-center mb-4">
-            <h1>Dear {{ statusCtrl.name }}</h1>
+            <h1>Dear {{ statusCtrl.user.userName }}</h1>
         </div>
         <div class="row justify-content-md-center mb-4">
-            <p class="col-md-8 text-center" ng-if="statusCtrl.score < 5">Thank you for joining us in this journey!
+            <p class="col-md-8 text-center" ng-if="statusCtrl.score < statusCtrl.nrQuestions/2">Thank you for joining us in this journey!
                 <br/>
-                Unfortunatelly, less than half of the answers submitted are incorrect. Let’s keep in touch for future opportunities!</p>
-            <p class="col-md-8 text-center" ng-if="statusCtrl.score >= 5">Thank you for joining us in this journey!
+                Unfortunatelly, less than half of the answers submitted (from 'Choose answer' and 'Write answer' section) are incorrect. Let’s keep in touch for future opportunities!</p>
+            <p class="col-md-8 text-center" ng-if="statusCtrl.score >= statusCtrl.nrQuestions/2">Thank you for joining us in this journey!
                 <br />
-                We’ll review your answers and get back to you with our feedback.</p>
+                We’ll review your full answers and get back to you with our complete feedback.</p>
             <br/>
             <p class="col-md-8 text-center score-result">
-                Your partial score is : <span> {{ statusCtrl.score }}</span>
+                Your partial score (from 'Choose answer' and 'Write answer' section) is : <br/><span> {{ statusCtrl.score }} / {{ statusCtrl.nrQuestions }}</span>
             </p>
             <br />
             <p class="col-md-8 text-center">

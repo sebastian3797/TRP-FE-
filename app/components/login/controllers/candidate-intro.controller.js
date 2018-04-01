@@ -9,20 +9,26 @@
     Controller.$inject = [
         '$scope',
         '$stateParams',
-        '$state'
+        '$state',
+        'trpApp.login.CandidateIntroService'
     ];
 
     function Controller(
         $scope,
         $stateParams,
-        $state) {
+        $state,
+        CandidateIntroService) {
 
         var _self = this;
 
         _self.testData = $stateParams.testData;
 
-        _self.nextPage = function () {
-            $state.go('statusCandidate', { testData: _self.testData});
+        _self.startTest = function () {
+            CandidateIntroService
+                .startTest(_self.testData.id)
+                .then(function (success) {
+                    $state.go('quizCandidate', { testData: success, user: _self.testData});
+                });
         }
     }
 
