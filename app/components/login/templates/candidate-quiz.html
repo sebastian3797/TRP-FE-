@@ -65,17 +65,9 @@
         <div class="quiz-info"> Please answer to the following question: </div>
         <br />
 
-        <div class="answer-container">
+        <div class="answer-container" ng-if="quizCtrl.selectedQuiz.type === 'CHOOSE_ANSWER'">
             <div>
                 {{ quizCtrl.selectedQuiz.title }}
-
-
-                <div ng-if="quizCtrl.selectedQuiz.type !== 'CHOOSE_ANSWER'">
-                    <label for="answer">Your answer :</label>
-                    <textarea class="form-control" rows="5" id="answer"
-                    ng-model="quizCtrl.selectedQuiz.candidateAnswerText"
-                    ng-change="quizCtrl.newAnswer()"></textarea>
-                </div>
             </div>
 
             <div ng-if="quizCtrl.selectedQuiz.type === 'CHOOSE_ANSWER'">
@@ -86,6 +78,32 @@
                                ng-change="quizCtrl.newAnswer()">
                     {{ ans.label}}
                     <br /><br />
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="quizCtrl.selectedQuiz.type !== 'CHOOSE_ANSWER'">
+
+            <div>
+                {{ quizCtrl.selectedQuiz.title }}
+            </div>
+            <br/><br />
+            <div style="display: flex">
+                <div ng-if="quizCtrl.selectedQuiz.type !== 'CHOOSE_ANSWER'" style="width: 40%;">
+                    <label for="answer">Your answer :</label>
+                    <textarea class="form-control" rows="5" id="answer"
+                              ng-model="quizCtrl.selectedQuiz.candidateAnswerText"
+                              ng-change="quizCtrl.newAnswer()"></textarea>
+                    <button class="btn btn-default"
+                            ng-if="quizCtrl.selectedQuiz.type === 'WRITE_CODE'"
+                            ng-click="quizCtrl.executeCode()"> Execute </button>
+                </div>
+                <div style="width: 10%"></div>
+                <div ng-if="quizCtrl.selectedQuiz.type === 'WRITE_CODE'" style="width: 40%">
+
+                    <label for="answer_code">Output :</label>
+                    <textarea class="form-control" rows="5" id="answer_code"
+                    ng-model="quizCtrl.outputCode"></textarea>
                 </div>
             </div>
         </div>

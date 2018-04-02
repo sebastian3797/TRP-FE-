@@ -10,14 +10,16 @@
         '$scope',
         '$stateParams',
         '$state',
-        '$timeout'
+        '$timeout',
+        'trpApp.login.CandidateQuizService'
     ];
 
     function Controller(
         $scope,
         $stateParams,
         $state,
-        $timeout) {
+        $timeout,
+        CandidateQuizService) {
 
         var _self = this;
 
@@ -25,7 +27,9 @@
 
         _self.submitedQuiz = [];
 
-        _self.counter = 120;
+        _self.outputCode = "";
+
+        _self.counter = 60;
         var stopped;
 
         _self.progressBarPieces = 0;
@@ -51,6 +55,11 @@
 
             _self.allQuiz = $stateParams.testData.questionList;
 
+            _self.allQuiz.forEach(function (r) {
+                if (r.type === 'CHOOSE_ANSWER')
+                    r.title = r.title.replace('/n/n', '/n');
+            });
+
             _self.progressBarPieces = _self.allQuiz.length;
 
             _self.selectedQuiz = _self.allQuiz[0];
@@ -67,6 +76,7 @@
         init();
 
         _self.setQuiz = function (id) {
+            _self.outputCode = "";
             _self.selectedQuiz = _self.allQuiz.find(q => q.id === id);
         };
 
@@ -80,7 +90,7 @@
                 if (_self.selectedQuiz.candidateAnswerText === "") {
                     _self.selectedQuiz.visited = 0;
                     $('.progress-bar').css('width', ((100/_self.progressBarPieces)* ($('.greenCircle').length - 1) + '%' ));
-                    $('.rocket-image').css('margin-left', ((((100/_self.progressBarPieces)* ($('.greenCircle').length - 1))+5) + '%' ));
+                    $('.rocket-image').css('margin-left', ((((100/_self.progressBarPieces)* ($('.greenCircle').length - 1))-5) + '%' ));
                 }
             }
 
@@ -95,6 +105,15 @@
 
         _self.submitQuiz = function () {
             $state.go('statusCandidate', { testData: _self.allQuiz, user: $stateParams.user});
+        };
+
+        _self.executeCode = function () {
+            CandidateQuizService
+                .executeCode(_self.selectedQuiz.candidateAnswerText)
+                .then(function (response) {
+                    _self.outputCode = "";
+                    _self.outputCode = response.outputCode;
+                })
         }
     }
 
